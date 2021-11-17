@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "1067212035269",
+    "project_id": "mobile-banking-685ae",
+    "storage_bucket": "mobile-banking-685ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067212035269:android:c6e0f834fc858f47adccac",
+        "android_client_info": {
+          "package_name": "uz.gita.mobilebanking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067212035269-9n02pfmp64qdl5mrp4numffol6q67qo5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGz9jPWzAdayymOTxvsqYhGkmEAuujXmk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067212035269-9n02pfmp64qdl5mrp4numffol6q67qo5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067212035269:android:3872cd5b3722f09dadccac",
+        "android_client_info": {
+          "package_name": "uz.gita.mobilebanking1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067212035269-9n02pfmp64qdl5mrp4numffol6q67qo5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGz9jPWzAdayymOTxvsqYhGkmEAuujXmk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067212035269-9n02pfmp64qdl5mrp4numffol6q67qo5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

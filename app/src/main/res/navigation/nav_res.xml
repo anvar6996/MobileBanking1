@@ -7,18 +7,21 @@
 
     <fragment
         android:id="@+id/splashScreen"
-        android:name="uz.gita.mobilebanking1.presentation.ui.screen.SplashScreen"
+        android:name="uz.gita.mobilebanking.presentation.ui.screen.SplashScreen"
         android:label="SplashScreen"
-        tools:layout="@layout/splash_screen" >
+        tools:layout="@layout/splash_screen">
         <action
             android:id="@+id/action_splashScreen_to_authorizationScreen"
             app:destination="@id/authorizationScreen" />
+        <action
+            android:id="@+id/action_splashScreen_to_mainScreen"
+            app:destination="@id/mainScreen" />
     </fragment>
     <fragment
         android:id="@+id/authorizationScreen"
-        android:name="uz.gita.mobilebanking1.presentation.ui.screen.AuthorizationScreen"
+        android:name="uz.gita.mobilebanking.presentation.ui.screen.AuthorizationScreen"
         android:label="AuthorizationScreen"
-        tools:layout="@layout/authorization_screen" >
+        tools:layout="@layout/authorization_screen">
         <action
             android:id="@+id/action_authorizationScreen_to_loginScreen"
             app:destination="@id/loginScreen" />
@@ -27,10 +30,10 @@
             app:destination="@id/registerScreen" />
     </fragment>
     <fragment
-        tools:layout="@layout/login_screen"
         android:id="@+id/loginScreen"
-        android:name="uz.gita.mobilebanking1.presentation.ui.screen.LoginScreen"
-        android:label="LoginScreen" >
+        android:name="uz.gita.mobilebanking.presentation.ui.screen.LoginScreen"
+        android:label="LoginScreen"
+        tools:layout="@layout/login_screen">
         <action
             android:id="@+id/action_loginScreen_to_smsVeryfyScreen"
             app:destination="@id/smsVeryfyScreen" />
@@ -38,18 +41,18 @@
     <fragment
 
         android:id="@+id/registerScreen"
-        android:name="uz.gita.mobilebanking1.presentation.ui.screen.RegisterScreen"
+        android:name="uz.gita.mobilebanking.presentation.ui.screen.RegisterScreen"
         android:label="RegisterScreen"
-        tools:layout="@layout/register_screen" >
+        tools:layout="@layout/register_screen">
         <action
             android:id="@+id/action_registerScreen_to_smsVeryfyScreen"
             app:destination="@id/smsVeryfyScreen" />
     </fragment>
     <fragment
         android:id="@+id/smsVeryfyScreen"
-        android:name="uz.gita.mobilebanking1.presentation.ui.screen.SmsVeryfyScreen"
+        android:name="uz.gita.mobilebanking.presentation.ui.screen.SmsVeryfyScreen"
         android:label="SmsVeryfyScreen"
-        tools:layout="@layout/smsverify_screen" >
+        tools:layout="@layout/smsverify_screen">
         <action
             android:id="@+id/action_smsVeryfyScreen_to_mainScreen"
             app:destination="@id/mainScreen" />
@@ -57,7 +60,45 @@
     <fragment
 
         android:id="@+id/mainScreen"
-        android:name="uz.gita.mobilebanking1.presentation.ui.screen.MainScreen"
+        android:name="uz.gita.mobilebanking.presentation.ui.screen.MainScreen"
         android:label="MainScreen"
-        tools:layout="@layout/main_screen" />
+        tools:layout="@layout/main_screen">
+        <action
+            android:id="@+id/action_mainScreen_to_addCardScreen"
+            app:destination="@id/addCardScreen" />
+        <action
+            android:id="@+id/action_mainScreen_to_editCardScreen"
+            app:destination="@id/editCardScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCardScreen"
+        android:name="uz.gita.mobilebanking.presentation.ui.screen.AddCardScreen"
+        android:label="AddCardScreen"
+        tools:layout="@layout/add_card_screen">
+        <action
+            android:id="@+id/action_addCardScreen_to_veryfyCardScreen"
+            app:destination="@id/veryfyCardScreen"
+            app:popUpTo="@id/addCardScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/veryfyCardScreen"
+        android:name="uz.gita.mobilebanking.presentation.ui.screen.VeryfyCardScreen"
+        android:label="VeryfyCardScreen"
+        tools:layout="@layout/veryfy_card_screen" />
+
+    <fragment
+        android:id="@+id/editCardScreen"
+        android:name="uz.gita.mobilebanking.presentation.ui.screen.EditCardScreen"
+        android:label="EditCardScreen"
+        tools:layout="@layout/edit_card_screen">
+        <action
+            android:id="@+id/action_editCardScreen_to_transferCardScreen"
+            app:destination="@id/transferCardScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/transferCardScreen"
+        android:name="uz.gita.mobilebanking.presentation.ui.screen.TransferCardScreen"
+        android:label="TransferCardScreen"
+        tools:layout="@layout/transfer_card_screen" />
 </navigation>

@@ -4,39 +4,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/cardReckler"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/codeCardVeryfy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="enter code in sms...." />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/sendCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="send"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
-
-
-    <Button
-        android:id="@+id/addCard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardReckler"
         app:layout_constraintVertical_bias="0.8" />
-
-
-    <Button
-        android:id="@+id/transfer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="transfe"
-        app:layout_constraintBottom_toBottomOf="@id/addCard"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/addCard"
-        app:layout_constraintTop_toTopOf="@id/addCard" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
