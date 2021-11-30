@@ -54,7 +54,7 @@ class MySharedPreferences @Inject constructor(@ApplicationContext context: Conte
         get() = pref.getString("smsCode", "")!!
 
     var controllRegisteget: Boolean
-        get() = pref.getBoolean("controllRegister", false)
+        get() = pref.getBoolean("controllRegister", true)
         set(value) = pref.edit().putBoolean("controllRegister", value).apply()
 
 }

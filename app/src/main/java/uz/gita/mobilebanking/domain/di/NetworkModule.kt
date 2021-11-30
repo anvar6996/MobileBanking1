@@ -5,7 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
-import uz.gita.mobilebanking.data.ApiClient
+import uz.gita.mobilebanking.data.server.ApiClient
 
 
 @Module

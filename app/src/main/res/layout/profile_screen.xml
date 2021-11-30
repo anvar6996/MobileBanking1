@@ -6,13 +6,60 @@
 
 
     <ImageView
+        android:id="@+id/imageAccount"
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_margin="25dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/card1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <!--    <QuickContactBadge-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
 
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:text="asd,apslpda"
+        android:textColor="@color/reakBlack"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@id/imageAccount" />
+
+    <TextView
+        android:id="@+id/lastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:text="sadl"
+        android:textColor="@color/reakBlack"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+
+    <TextView
+        android:id="@+id/phoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:text="asd,l"
+        android:textColor="@color/reakBlack"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@id/lastName" />
+
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:text="save changes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

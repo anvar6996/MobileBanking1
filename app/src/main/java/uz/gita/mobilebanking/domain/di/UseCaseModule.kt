@@ -31,4 +31,13 @@ abstract class UseCaseModule {
     @Binds
     @Singleton
     abstract fun getAdd(impl: AddCardUseCaseImpl): AddCardUseCase
+
+    @Binds
+    @Singleton
+    abstract fun getTrasferUseCase(impl: TransferUseCaseImpl): TransferUseCase
+
+    @Binds
+    @Singleton
+    abstract fun getProfileUseCase(impl: ProfileUseCaseImpl): ProfilelUseCase
+
 }

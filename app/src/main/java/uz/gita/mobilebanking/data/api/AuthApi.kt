@@ -6,9 +6,9 @@ import retrofit2.http.Body
 import retrofit2.http.Header
 import retrofit2.http.POST
 import uz.gita.mobilebanking.data.requests.autorization.AuthorizationRequest
-import uz.gita.mobilebanking.data.responce.BasicResponce
 import uz.gita.mobilebanking.data.requests.autorization.RegisterRequest
 import uz.gita.mobilebanking.data.requests.autorization.SmsVeryfyRequest
+import uz.gita.mobilebanking.data.responce.BasicResponce
 import uz.gita.mobilebanking.data.responce.VeriyfyResponce
 
 interface AuthApi {

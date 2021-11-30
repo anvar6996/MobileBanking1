@@ -5,7 +5,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import uz.gita.mobilebanking.data.ApiClient
 import uz.gita.mobilebanking.data.MySharedPreferences
 import uz.gita.mobilebanking.data.api.CardApi
 import uz.gita.mobilebanking.data.api.TransferApi
@@ -14,18 +13,18 @@ import uz.gita.mobilebanking.data.requests.trnsfer_money.RequestMoneyTransfer
 import uz.gita.mobilebanking.data.requests.trnsfer_money.TransferFeeRequest
 import uz.gita.mobilebanking.data.responce.trasfer.ResponseTransferFee
 import uz.gita.mobilebanking.data.responce.trasfer.SendMondeyResponce
+import uz.gita.mobilebanking.data.server.ApiClient
 import uz.gita.mobilebanking.domain.usecase.repository.TransferRepository
 import javax.inject.Inject
 
 
 class TransferRepositoryImpl @Inject constructor(private val api: TransferApi, private val pref: MySharedPreferences) : TransferRepository {
-
     private val gson = Gson()
 
     override fun sendMoney(data: RequestMoneyTransfer): Flow<Result<SendMondeyResponce>> = flow {
 
         try {
-            val response = api.sendMoney(pref.accessToken, data)
+            val response = api.sendMoney(data)
             if (response.code() in 200..299) {
                 emit(Result.success(response.body()!!))
             } else {
@@ -38,7 +37,7 @@ class TransferRepositoryImpl @Inject constructor(private val api: TransferApi, p
 
     override fun transferFee(data: TransferFeeRequest): Flow<Result<ResponseTransferFee>> = flow {
         try {
-            val response = api.transferFee(pref.accessToken, data)
+            val response = api.transferFee(data)
             if (response.code() in 200..299) {
                 emit(Result.success(response.body()!!))
             } else {
@@ -53,7 +52,7 @@ class TransferRepositoryImpl @Inject constructor(private val api: TransferApi, p
 
     override fun getName(data: RequesByPanCard): Flow<Result<String>> = flow {
         val api2 = ApiClient.retrofit.create(CardApi::class.java)
-        val response = api2.getOwnerByPan(pref.accessToken, data)
+        val response = api2.getOwnerByPan(data)
         when {
             response.isSuccessful -> {
                 emit(Result.success(response.body()!!.data.fio))

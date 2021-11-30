@@ -6,8 +6,8 @@ data class ResponseProfileInfo(
 
 data class DataUser(
 
-    val firstName: String,
-    val lastName: String,
-    val password: String,
-    val phone: String
+    val firstName: String,//name
+    val lastName: String,//last name
+    val password: String,// PIN
+    val phone: String//phone number
 )

@@ -37,12 +37,10 @@ class MainScreen : Fragment(R.layout.main_screen) {
         adapter.setListenerCard {
             val bundle = Bundle()
             bundle.putString("codeforEdit", it.pan)
-            bundle.putString("nameCardforEdit", it.cardName)
+            bundle.putString("nameCardForEdit", it.cardName)
+            arguments = bundle
             findNavController().navigate(R.id.action_mainScreen_to_editCardScreen, bundle)
         }
-//        vb.sendMoney.setOnClickListener {
-//            viewModel.openSendMoney()
-//        }
 
         viewModel.errorLivaData.observe(viewLifecycleOwner, errorLivaDataObserver)
 //        viewModel.progressLiveData.observe(viewLifecycleOwner, progressLivedataObserver)
@@ -50,6 +48,9 @@ class MainScreen : Fragment(R.layout.main_screen) {
 //        viewModel.successDeleteLiveData.observe(viewLifecycleOwner, successDeleteLiveDataObserver)
 //        viewModel.failureDeleteLiveData.observe(viewLifecycleOwner, failureDeleteLiveDataObserver)
 //        viewModel.openSendMoneyLiveData.observe(viewLifecycleOwner, openSendMoneyLiveDataObserver)
+        bind.acountImage.setOnClickListener {
+            findNavController().navigate(R.id.action_mainScreen_to_profileScreen)
+        }
     }
 
     private val errorLivaDataObserver = Observer<String> {

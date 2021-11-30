@@ -5,6 +5,15 @@
     android:layout_height="match_parent">
 
 
+    <ImageView
+        android:id="@+id/acountImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:src="@drawable/ic_baseline_account_circle_24"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cardReckler"
         android:layout_width="match_parent"

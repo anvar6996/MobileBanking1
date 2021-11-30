@@ -23,10 +23,22 @@ class EditCardScreen : Fragment(R.layout.edit_card_screen) {
     private val viewModel by viewModels<EditCardViewModelImpl>()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        arguments?.let {
-//            var code = it.getString("codeforEdit")
-//            var nameCard = it.getString("nameCardForEdit")
-//        }
+        var code = ""
+        var nameCard = ""
+        arguments?.let {
+            code = it.getString("codeforEdit").toString()
+            nameCard = it.getString("nameCardForEdit").toString()
+        }
+        bind.numberCard.text = code
+        bind.nameUserCard.text = nameCard
+
+        bind.transfer.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("codeTransfer", code)
+            bundle.putString("nameTransferCard", nameCard)
+            arguments = bundle
+            findNavController().navigate(R.id.action_editCardScreen_to_transferCardScreen)
+        }
         bind.deleteCard.setOnClickListener {
             viewModel.deleteCard(DeleteCardRequest(arguments?.getString("codeforEdit").toString()))
         }

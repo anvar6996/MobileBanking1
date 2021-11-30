@@ -17,7 +17,6 @@ interface AppRepository {
 
     fun setStartScreen(screen: StartScreenEnum)
 
-    fun getToken(): String
 //    fun userNewPassword(request: NewPasswordRequest) : Flow<Result<Unit>>
 //    fun userResend(request: ResendRequest) : Flow<Result<Unit>>
 }

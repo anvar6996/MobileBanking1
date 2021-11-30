@@ -6,14 +6,14 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import retrofit2.Response
-import uz.gita.mobilebanking.data.ApiClient
 import uz.gita.mobilebanking.data.MySharedPreferences
 import uz.gita.mobilebanking.data.api.AuthApi
 import uz.gita.mobilebanking.data.enum.StartScreenEnum
 import uz.gita.mobilebanking.data.requests.autorization.AuthorizationRequest
-import uz.gita.mobilebanking.data.responce.BasicResponce
 import uz.gita.mobilebanking.data.requests.autorization.RegisterRequest
 import uz.gita.mobilebanking.data.requests.autorization.SmsVeryfyRequest
+import uz.gita.mobilebanking.data.responce.BasicResponce
+import uz.gita.mobilebanking.data.server.ApiClient
 import uz.gita.mobilebanking.domain.usecase.repository.AppRepository
 import uz.gita.mobilebanking.presentation.utils.timber
 import javax.inject.Inject
@@ -58,10 +58,6 @@ class AppRepositoryImpl @Inject constructor(private val api: AuthApi, private va
     }
 
     override fun setStartScreen(screen: StartScreenEnum) {
-        TODO("Not yet implemented")
-    }
-
-    override fun getToken(): String {
         TODO("Not yet implemented")
     }
 

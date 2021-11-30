@@ -1,4 +1,4 @@
-package uz.gita.mobilebanking.data
+package uz.gita.mobilebanking.data.server
 
 import com.google.gson.Gson
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
@@ -13,11 +13,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import uz.gita.mobilebanking.BuildConfig.LOGGING
 import uz.gita.mobilebanking.app.App
+import uz.gita.mobilebanking.data.MySharedPreferences
 import uz.gita.mobilebanking.data.responce.VeriyfyResponce
 import uz.gita.mobilebanking.presentation.utils.timber
 
 object ApiClient {
-    val retrofit: Retrofit = Retrofit.Builder().baseUrl("http://2593-82-215-103-2.ngrok.io")
+    val retrofit: Retrofit = Retrofit.Builder().baseUrl("http://9dfc-82-215-107-245.ngrok.io")
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(CoroutineCallAdapterFactory()).client(getHttpClient()).build()
 
@@ -67,7 +68,7 @@ fun refreshInterceptor() = Interceptor { chain ->
         val requestRefresh = request.newBuilder()
             .addHeader("refresh_token", pref.refreshTokent)
             .method("POST", body)
-            .url("http://2593-82-215-103-2.ngrok.io/api/v1/auth/refresh")
+            .url("http://9dfc-82-215-107-245.ngrok.io/api/v1/auth/refresh")
             .build()
 
         val responseRefresh = chain.proceed(requestRefresh)
