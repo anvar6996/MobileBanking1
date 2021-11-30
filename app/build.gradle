@@ -133,4 +133,11 @@ dependencies {
      * Paging
      */
     implementation "androidx.paging:paging-runtime-ktx:3.1.0-alpha01"
+
+
+    /**
+     * Image picker
+     */
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
+
 }

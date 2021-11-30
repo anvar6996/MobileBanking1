@@ -5,13 +5,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import okhttp3.MultipartBody
 import uz.gita.mobilebanking.data.MySharedPreferences
 import uz.gita.mobilebanking.data.api.Profile
 import uz.gita.mobilebanking.data.requests.profile_user.DataUser
 import uz.gita.mobilebanking.data.requests.profile_user.RequestProfileEdit
 import uz.gita.mobilebanking.data.responce.BasicResponce
 import uz.gita.mobilebanking.domain.usecase.repository.ProfileRepository
+import uz.gita.mobilebanking.presentation.utils.toRequesData
 import java.io.File
 import javax.inject.Inject
 
@@ -33,8 +33,8 @@ class ProfileRepositoryImpl @Inject constructor(private val api: Profile, privat
         }
     }
 
-    override fun setAvatar(part: MultipartBody.Part): Flow<Result<Unit>> = flow {
-        val responce = api.setAvatar(part)
+    override fun setAvatar(file: File): Flow<Result<Unit>> = flow {
+        val responce = api.setAvatar(file.toRequesData())
         when {
             responce.isSuccessful -> emit(Result.success(Unit))
             responce.errorBody() != null -> {

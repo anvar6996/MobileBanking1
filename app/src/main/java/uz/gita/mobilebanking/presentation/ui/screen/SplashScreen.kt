@@ -15,7 +15,6 @@ import uz.gita.mobilebanking.presentation.ui.viewmodel.impl.SplashViewModel
 @SuppressLint("CustomSplashScreen")
 @AndroidEntryPoint
 class SplashScreen : Fragment(R.layout.splash_screen) {
-
     private val viewModel by viewModels<SplashViewModel>()
 
     @SuppressLint("FragmentLiveDataObserve")

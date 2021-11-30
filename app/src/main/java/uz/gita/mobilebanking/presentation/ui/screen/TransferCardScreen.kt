@@ -3,7 +3,6 @@ package uz.gita.mobilebanking.presentation.ui.screen
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -12,7 +11,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import uz.gita.mobilebanking.R
 import uz.gita.mobilebanking.data.requests.trnsfer_money.RequestMoneyTransfer
-import uz.gita.mobilebanking.data.requests.trnsfer_money.TransferFeeRequest
 import uz.gita.mobilebanking.data.responce.trasfer.ResponseTransferFee
 import uz.gita.mobilebanking.databinding.TransferCardScreenBinding
 import uz.gita.mobilebanking.presentation.ui.viewmodel.impl.TransferCardViewModelImpl

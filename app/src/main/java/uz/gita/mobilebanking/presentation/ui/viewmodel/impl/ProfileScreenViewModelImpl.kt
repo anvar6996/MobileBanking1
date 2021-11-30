@@ -31,12 +31,12 @@ class ProfileScreenViewModelImpl @Inject constructor(private val case: ProfilelU
 
 
     override fun setAvatar(file: File) {
-        if (!isConnected()){
+        if (!isConnected()) {
             errorLivaData.value = "Internetga ulanish bilan bog'liq muammolar bor"
             return
         }
+        progressLiveData.value = true
         viewModelScope.launch(Dispatchers.IO) {
-            progressLiveData.value = true
             case.setAvatar(file).onEach {
                 progressLiveData.value = false
                 enableLoginLiveData.value = Unit
@@ -52,7 +52,7 @@ class ProfileScreenViewModelImpl @Inject constructor(private val case: ProfilelU
     }
 
     override fun getAvatar() {
-        if (!isConnected()){
+        if (!isConnected()) {
             errorLivaData.value = "Internetga ulanish bilan bog'liq muammolar bor"
             return
         }
@@ -74,7 +74,7 @@ class ProfileScreenViewModelImpl @Inject constructor(private val case: ProfilelU
     }
 
     override fun editProfile(request: RequestProfileEdit) {
-        if (!isConnected()){
+        if (!isConnected()) {
             errorLivaData.value = "Internetga ulanish bilan bog'liq muammolar bor"
             return
         }
@@ -94,7 +94,7 @@ class ProfileScreenViewModelImpl @Inject constructor(private val case: ProfilelU
     }
 
     override fun getInfo() {
-        if (!isConnected()){
+        if (!isConnected()) {
             errorLivaData.value = "Internetga ulanish bilan bog'liq muammolar bor"
             return
         }

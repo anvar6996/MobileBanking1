@@ -24,5 +24,4 @@ interface Profile {
     @GET("/api/v1/profile/info")
     suspend fun profileInfo(): Response<ResponseProfileInfo>
 
-
 }
