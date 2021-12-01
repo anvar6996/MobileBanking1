@@ -11,8 +11,111 @@
         android:layout_height="wrap_content"
         android:layout_margin="25dp"
         android:src="@drawable/ic_baseline_account_circle_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mainCard"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_margin="25dp"
+        app:cardBackgroundColor="#00000000"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="45sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="15sp"
+            android:layout_marginTop="15sp"
+            android:background="#57AB82" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/card_bg" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/overBalance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="50dp"
+                android:maxLines="1"
+                android:minLines="1"
+                android:text="8600 0000 0000 0017"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/descrition"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.2" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_remove_red_eye_24"
+                app:layout_constraintBottom_toBottomOf="@id/overBalance"
+                app:layout_constraintLeft_toLeftOf="@id/descrition"
+                app:layout_constraintTop_toTopOf="@id/overBalance" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/gotoCard"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="40dp"
+                app:cardBackgroundColor="@color/realWhite"
+                app:cardCornerRadius="150dp"
+                app:cardElevation="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <ImageView
+                    android:layout_width="32sp"
+                    android:layout_height="32sp"
+                    android:layout_gravity="center"
+                    android:padding="2dp"
+                    android:rotation="180"
+                    android:src="@drawable/ic_baseline_arrow_back_ios_new_24" />
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Перейти к картам"
+                android:textColor="@color/realWhite"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/gotoCard"
+                app:layout_constraintLeft_toRightOf="@id/gotoCard"
+                app:layout_constraintTop_toTopOf="@id/gotoCard" />
+
+            <TextView
+                android:id="@+id/descrition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Общий баланс"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cardReckler"
@@ -21,7 +124,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainCard"
         app:layout_constraintVertical_bias="0.2" />
 
 
@@ -47,5 +150,11 @@
         app:layout_constraintRight_toLeftOf="@id/addCard"
         app:layout_constraintTop_toTopOf="@id/addCard" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="history"
+        app:layout_constraintBottom_toTopOf="@id/addCard"
+        app:layout_constraintLeft_toLeftOf="@id/addCard" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

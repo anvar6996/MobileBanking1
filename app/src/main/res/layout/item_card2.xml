@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:id="@+id/cardItem"
+    android:layout_margin="22sp"
+    app:cardCornerRadius="50dp"
+    app:cardElevation="45sp">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="#2A000000"
+        android:scaleType="centerCrop"
+        android:src="@drawable/card1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/numberCardItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            android:maxLines="1"
+            android:minLines="1"
+            android:text="8600 0000 0000 0017"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.72" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25sp"
+            android:text="GITA BANK"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nameUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jo'raqulov Anvar"
+            android:textColor="#F9F5F5"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/numberCardItem"
+            app:layout_constraintTop_toBottomOf="@id/numberCardItem" />
+
+        <TextView
+            android:id="@+id/srogCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="15/03"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            app:layout_constraintRight_toRightOf="@id/numberCardItem"
+            app:layout_constraintTop_toBottomOf="@id/numberCardItem" />
+
+        <TextView
+            android:id="@+id/balnce_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="15/03"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

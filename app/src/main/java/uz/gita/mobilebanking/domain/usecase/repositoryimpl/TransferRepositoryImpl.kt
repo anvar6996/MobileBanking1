@@ -22,9 +22,8 @@ class TransferRepositoryImpl @Inject constructor(private val api: TransferApi, p
     private val gson = Gson()
 
     override fun sendMoney(data: RequestMoneyTransfer): Flow<Result<SendMondeyResponce>> = flow {
-
+        val response = api.sendMoney(data)
         try {
-            val response = api.sendMoney(data)
             if (response.code() in 200..299) {
                 emit(Result.success(response.body()!!))
             } else {
@@ -36,6 +35,7 @@ class TransferRepositoryImpl @Inject constructor(private val api: TransferApi, p
     }.flowOn(Dispatchers.IO)
 
     override fun transferFee(data: TransferFeeRequest): Flow<Result<ResponseTransferFee>> = flow {
+
         try {
             val response = api.transferFee(data)
             if (response.code() in 200..299) {

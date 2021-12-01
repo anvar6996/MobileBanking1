@@ -8,6 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import okhttp3.ResponseBody
 import uz.gita.mobilebanking.data.requests.profile_user.DataUser
 import uz.gita.mobilebanking.data.requests.profile_user.RequestProfileEdit
 import uz.gita.mobilebanking.domain.usecase.ProfilelUseCase
@@ -25,7 +26,7 @@ class ProfileScreenViewModelImpl @Inject constructor(private val case: ProfilelU
     override val progressLiveData = MutableLiveData<Boolean>()
 
     override val setAvatarLiveData = MutableLiveData<Unit>()
-    override val getAvatarLiveData = MutableLiveData<File>()
+    override val getAvatarLiveData = MutableLiveData<ResponseBody>()
     override val editProfileLiveData = MutableLiveData<Unit>()
     override val getInfoLiveData = MutableLiveData<DataUser>()
 
@@ -56,8 +57,8 @@ class ProfileScreenViewModelImpl @Inject constructor(private val case: ProfilelU
             errorLivaData.value = "Internetga ulanish bilan bog'liq muammolar bor"
             return
         }
+        progressLiveData.value = true
         viewModelScope.launch(Dispatchers.IO) {
-            progressLiveData.value = true
             case.getAvatar().onEach {
                 progressLiveData.value = false
                 enableLoginLiveData.value = Unit

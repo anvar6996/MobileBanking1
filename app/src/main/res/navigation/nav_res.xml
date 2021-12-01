@@ -103,10 +103,19 @@
         android:id="@+id/transferCardScreen"
         android:name="uz.gita.mobilebanking.presentation.ui.screen.TransferCardScreen"
         android:label="TransferCardScreen"
-        tools:layout="@layout/transfer_card_screen" />
+        tools:layout="@layout/transfer_card_screen">
+        <action
+            android:id="@+id/action_transferCardScreen_to_chekTransferScreen"
+            app:destination="@id/chekTransferScreen" />
+    </fragment>
     <fragment
         android:id="@+id/profileScreen"
         android:name="uz.gita.mobilebanking.presentation.ui.screen.ProfileScreen"
         android:label="ProfileScreen"
         tools:layout="@layout/profile_screen" />
+    <fragment
+        android:id="@+id/chekTransferScreen"
+        android:name="uz.gita.mobilebanking.presentation.ui.screen.ChekTransferScreen"
+        android:label="ChekTransferScreen"
+        tools:layout="@layout/chek_transfer_screen" />
 </navigation>

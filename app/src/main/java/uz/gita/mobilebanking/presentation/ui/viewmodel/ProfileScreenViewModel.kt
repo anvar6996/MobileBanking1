@@ -1,6 +1,7 @@
 package uz.gita.mobilebanking.presentation.ui.viewmodel
 
 import androidx.lifecycle.LiveData
+import okhttp3.ResponseBody
 import uz.gita.mobilebanking.data.requests.profile_user.DataUser
 import uz.gita.mobilebanking.data.requests.profile_user.RequestProfileEdit
 import java.io.File
@@ -14,7 +15,7 @@ interface ProfileScreenViewModel {
     val progressLiveData: LiveData<Boolean>
 
     val setAvatarLiveData: LiveData<Unit>
-    val getAvatarLiveData: LiveData<File>
+    val getAvatarLiveData: LiveData<ResponseBody>
     val editProfileLiveData: LiveData<Unit>
     val getInfoLiveData: LiveData<DataUser>
 

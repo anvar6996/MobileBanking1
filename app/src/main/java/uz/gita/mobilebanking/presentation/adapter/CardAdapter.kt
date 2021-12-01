@@ -49,7 +49,7 @@ class CardAdapter(val list: ArrayList<CardData>) : RecyclerView.Adapter<CardAdap
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-        return VH(LayoutInflater.from(parent.context).inflate(R.layout.item_card, parent, false))
+        return VH(LayoutInflater.from(parent.context).inflate(R.layout.item_card2, parent, false))
     }
 
     override fun onBindViewHolder(holder: VH, position: Int) {

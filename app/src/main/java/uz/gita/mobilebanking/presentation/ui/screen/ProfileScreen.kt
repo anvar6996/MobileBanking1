@@ -3,9 +3,7 @@ package uz.gita.mobilebanking.presentation.ui.screen
 import android.app.Activity
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -41,9 +39,6 @@ class ProfileScreen : Fragment(R.layout.profile_screen) {
                 val fileUri = data?.data!!
                 bind.imageAccount.setImageURI(fileUri)
                 file = File(getPath(requireContext(), fileUri))
-                Log.d("TTT",file!!.path)
-                Log.d("TTT",file!!.name)
-                Log.d("TTT",file!!.absolutePath)
             }
         }
     }
@@ -53,11 +48,13 @@ class ProfileScreen : Fragment(R.layout.profile_screen) {
 
         bind.save.setOnClickListener {
             file?.let { it1 -> viewmodel.setAvatar(it1) }
-            viewmodel.editProfile(RequestProfileEdit(bind.name.text.toString(), bind.lastName.text.toString(), bind.phoneNumber.text.toString()))
+            viewmodel.editProfile(RequestProfileEdit(bind.name.text.toString(), bind.lastName.text.toString(), bind.password.text.toString()))
         }
+
         bind.name.addTextChangedListener {
             bind.save.isEnabled = it.toString().isEmpty()
         }
+
         bind.lastName.addTextChangedListener {
             bind.save.isEnabled = it.toString().isEmpty()
         }
@@ -65,11 +62,15 @@ class ProfileScreen : Fragment(R.layout.profile_screen) {
             bind.save.isEnabled = it?.length == 13 && it.toString().startsWith("+998")
         }
 
+        bind.password.addTextChangedListener {
+            bind.save.isEnabled = it?.length == 8
+        }
+
         bind.imageAccount.setOnClickListener {
             ImagePicker.with(requireActivity())
-                .compress(1024)            //Final image size will be less than 1 MB(Optional)
+                .compress(1024)
                 .crop()
-                .maxResultSize(512, 512)    //Final image resolution will be less than 1080 x 1080(Optional)
+                .maxResultSize(512, 512)
                 .saveDir(File(requireContext().getExternalFilesDir(null)?.let {
                     it.absolutePath
                 }, "MyImage"))
@@ -78,14 +79,14 @@ class ProfileScreen : Fragment(R.layout.profile_screen) {
                 }
         }
 
-//        viewmodel.getAvatar()
+        viewmodel.getAvatar()
         viewmodel.getInfo()
-//        viewmodel.getAvatarLiveData.observe(viewLifecycleOwner, observerImage)
+        viewmodel.getAvatarLiveData.observe(viewLifecycleOwner, observerImage)
         viewmodel.getInfoLiveData.observe(viewLifecycleOwner, observerInfo)
     }
 
-    private val observerImage = Observer<File> {
-        bind.imageAccount.setImageURI(Uri.fromFile(it))
+    private val observerImage = Observer<ResponseBody> {
+        downloadImage(it)
     }
     private val observerInfo = Observer<DataUser> {
         bind.name.setText(it.firstName)

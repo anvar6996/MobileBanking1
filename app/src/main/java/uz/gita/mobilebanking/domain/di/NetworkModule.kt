@@ -10,7 +10,7 @@ import uz.gita.mobilebanking.data.server.ApiClient
 
 @Module
 @InstallIn(SingletonComponent::class)
- class NetworkModule {
+class NetworkModule {
 
     @Provides
     fun getRetrofit(): Retrofit = ApiClient.retrofit

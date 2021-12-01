@@ -25,6 +25,7 @@ class EditCardScreen : Fragment(R.layout.edit_card_screen) {
         super.onViewCreated(view, savedInstanceState)
         var code = ""
         var nameCard = ""
+
         arguments?.let {
             code = it.getString("codeforEdit").toString()
             nameCard = it.getString("nameCardForEdit").toString()

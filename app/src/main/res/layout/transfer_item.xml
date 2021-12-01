@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/item"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageTranser"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        android:src="@drawable/card1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/transferInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15sp"
+        android:text="Оплата товара и услуг"
+        android:textColor="@color/grayTextColor"
+        app:layout_constraintLeft_toRightOf="@id/imageTranser"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22:36"
+        android:textColor="@color/grayTextColor"
+        app:layout_constraintLeft_toLeftOf="@id/transferInfo"
+        app:layout_constraintTop_toBottomOf="@id/transferName" />
+
+    <TextView
+        android:id="@+id/transferName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ALOQAMOBILE OPLATA"
+        android:textColor="@color/reakBlack"
+        app:layout_constraintLeft_toLeftOf="@id/transferInfo"
+        app:layout_constraintTop_toBottomOf="@id/transferInfo" />
+
+    <TextView
+        android:id="@+id/trensferAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="- 9 037"
+        android:textColor="@color/reakBlack"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@id/cardCode"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cardCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="86000000000018"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/trensferAmount" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

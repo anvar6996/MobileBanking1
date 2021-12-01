@@ -8,6 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="popularColor">#36A36E</color>
     <color name="realWhite">#FFFFFF</color>
     <color name="reakBlack">#000000</color>
+    <color name="grayTextColor">#B2B2B0</color>
 </resources>

@@ -24,14 +24,14 @@ interface CardApi {
     @POST("/api/v1/card/delete-card")
     suspend fun delete(@Body request: DeleteCardRequest): Response<CardResponce>
 
-
     @GET("/api/v1/card/all")
     suspend fun getAllCard(): Response<AllCardResponse>
-
 
     @GET("/api/v1/card/owner-by-pan")
     suspend fun getOwnerByPan(@Body data: RequesByPanCard): Response<ResponseOwnerByPan>
 
     @GET("/api/v1/card/owner-by-id")
     suspend fun getOwnerById(@Body data: RequestOwnerById): Response<ResponseOwnerById>
+
+
 }

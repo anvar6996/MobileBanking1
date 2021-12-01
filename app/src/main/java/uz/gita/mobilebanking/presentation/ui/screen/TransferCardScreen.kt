@@ -28,13 +28,18 @@ class TransferCardScreen : Fragment(R.layout.transfer_card_screen) {
             code = it.getString("codeTransfer").toString()
             nameCard = it.getString("nameTransferCard").toString()
         }
-        val senderId = 17
+        val senderId = 16
 
 //        bind.codeTransferCard.addTextChangedListener {
 //            viewModel.transferFee(TransferFeeRequest(bind.tansferMoney.text.toString().toInt(), bind.codeTransferCard.text.toString(), senderId))
 //        }
         bind.sendMondey.setOnClickListener {
+            val bundle = Bundle()
+//            val data = TransferFeeRequest(bind.tansferMoney.text.toString().toFloat(), bind.codeTransferCard.text.toString(), senderId)
+//            bundle.putSerializable("valueTransfer", data)
+//            viewModel.transferFee(data)
             viewModel.sendMoney(RequestMoneyTransfer(bind.tansferMoney.text.toString().toInt(), bind.codeTransferCard.text.toString(), senderId))
+//            findNavController().navigate(R.id.action_transferCardScreen_to_chekTransferScreen, bundle)
         }
         viewModel.enableLoginLiveData.observe(viewLifecycleOwner, enabledLiveDataObserver)
         viewModel.disableLoginLiveData.observe(viewLifecycleOwner, disableCardObserver)
